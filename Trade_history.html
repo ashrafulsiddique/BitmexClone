@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.min.css" rel="stylesheet">
+
+
+    <title>Bitmex</title>
+  </head>
+  <body>
+    <style>
+     <!--  Header -->
+      
+#header {
+    height: 3.0769230769rem;
+    width: 100%;
+}
+.head {
+    align-items: center;
+    background: var(--headerBackground);
+    border: 0;
+    box-shadow: 0px 0px 2px 0px black;
+    color: var(--headerTextColor);
+    display: flex;
+    padding: 8px var(--section-separation)/2;
+    position: relative;
+    z-index: 1;
+    background: rgba(46,63,77);
+}
+
+.logoWrap {
+    display: block;
+    height: 1.9230769231rem;
+    width: 19.0769230769rem;
+    text-align: center;
+}
+
+.logoWrap img {
+    max-height: 100%;
+}
+
+.head > .mex, .head .section > .mex {
+    
+    background: linear-gradient(rgba(170, 170, 170, 0), rgba(170, 170, 170, 0.8), rgba(145, 145, 145, 0));
+    height: 100%;
+    margin: 0 0.53846rem;
+    position: relative;
+    width: 1px;
+}
+
+.navbar {
+    display: flex;
+    flex: 25 0 auto;
+    font-size: 1.38462rem;
+    justify-content: space-between;
+    max-width: 550px;
+    padding: 0 10px;
+
+}
+
+.section {
+    align-items: center;
+    align-self: flex-end;
+    display: flex;
+    flex: 1 0 auto;
+    height: 100%;
+    justify-content: flex-end;
+}
+
+
+#header .dropdown-toggle .flag-icon, #header .support-icon {
+    vertical-align: top;
+}
+
+.localeSelector .flag-icon {
+    background-size: contain;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    position: relative;
+    display: inline-block;
+    height: 1em;
+    line-height: 1em;
+}
+
+    
+
+body{
+    background-color: rgba(169,188,204,0.8);
+    background-image: radial-gradient(farthest-side ellipse at 10% 0, rgba(169,188,204,0.8), rgba(185,201,214,0.79), rgba(217,226,233,0.85)),url(img/bgnoise_lg_dark.png);
+}
+footer{
+  background: rgba(46,63,77);
+  color: #fff;
+}
+footer a{
+  color: #fff;
+}
+.footer-logo{
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100px;
+}
+ul{
+  padding: 0;
+}
+li{
+  list-style-type: none;
+}
+.inline-li li{
+  display: inline;
+  padding: 5px;
+}
+.inline-li li:first-child{
+  padding-left: 0;
+}
+
+[data-toggle="collapse"] .fas:before {   
+  content: "\f078";
+}
+
+[data-toggle="collapse"].collapsed .fas:before {
+  content: "\f054";
+}
+.graph-sub-tab .dropdown-menu{
+  height: 200px;
+  overflow-y: scroll;
+}
+
+.input-currency{
+    position: relative;
+    top: -30px;
+    left: 0px;
+    background: skyblue;
+    padding: 3px 10px;
+}
+#buy-price,#limit{
+  text-align: right;
+}
+
+
+/*=================Common Style==============*/
+
+.bordered{
+  border: 1px solid green;
+  padding: 5px;
+}
+.btn-no-radius{
+  border-radius: 0;
+}
+
+/*=================Account==============*/
+
+.linksBar {
+    padding: 0 0 4px 0;
+    margin: 0;
+}
+.linksBar .separator {
+    font-weight: 700;
+    margin-left: 0px;
+    padding: 10px 0 5px 10px;
+    border-bottom: 1px solid #aaa;
+}
+.linksBar>li {
+    margin-bottom: 1px;
+    list-style: none;
+}
+.linksBar>li.item a, .linksBar>li {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 4px 20px;
+    margin: 0 -10px;
+}
+.linksBar>li i {
+    line-height: 16px;
+    float: right;
+    font-size: 14px;
+    margin: 0;
+}
+.linksBar li.active.item>a, .linksBar li.item>a:hover{
+    background: #577994;
+    position: relative;
+}
+.linksBar li.active.item>a{
+    font-weight: 600;
+}
+
+/*=======================Balance===================*/
+
+.account-content,.withdraw-content{
+    background: #fff;
+    margin: 5px 10px;
+    outline: 1px solid #888;
+    -webkit-box-shadow: 2px 2px 2px -1px black;
+    box-shadow: 2px 2px 2px -1px black;
+}
+.account-content{
+  margin: 5px 10px;
+}
+.btn-segmented{
+    border-radius: 0;
+    border: 1px solid #bbb;
+}
+
+.deposit-wallet{
+    padding: 0 !important;
+    border-right: 0 !important;
+}
+.withdraw-wallet{
+    padding: 0 !important;
+    border-left: 0 !important;
+}
+.table-outline{
+  border:1px solid #dee2e6;
+  font-size: 14px;
+}
+
+/*=======================Deposit===================*/
+
+.list-style li{
+  list-style-type: square;
+}
+
+/*=======================Withdraw===================*/
+
+.withdraw-content{
+  margin: 5px 0 10px;
+}
+
+
+/*=======================Trade History===================*/
+
+
+    </style>
+
+
+
+
+
+
+
+  
+
+
+
+  <header id="header" class="head">
+    <span class="noHover noBorder hidden-xs hidden-xxs tooltipWrapper">
+      <a href="#" class="logoWrap "><img src="img/bitmex-logo-alt-white.png"></a>
+    </span>
+    <span class="mex hidden-xs">
+      
+    </span>
+  <div class="navbar"><a href="#" class="link nav">Trade</a>
+      <span class="">•</span><a href="#" class="link">Contracts</a>
+      <span class="">•</span>
+      <a href="#" class="link  ">References</a>
+      <span class="hidden-xs">•</span>
+      <a href="#" class="link  hidden-xs">API</a>
+      <span class="">•</span>
+      <a href="#" rel="external" class="link  ">Register</a>
+      <span class="">•</span>
+      <a href="#" rel="external" class="link  ">Log In</a>
+  </div>
+  <div class="section">
+    <span class="mex"></span>
+    <div class="announcementsDropdown optionsDropdown dropdown">
+      <a href="#" title="" class=" dropdown-toggle noColor">
+        <i class="dropdown-toggle-icon fas fa-bullhorn"></i>
+        <span class="tooltipWrapper horizFlip"><b class="unread-count">5</b>
+        </span>
+      </a>
+    </div>
+    <span class="mex">
+    </span>
+    <div class="selectDropdown localeSelector localeSelectorDropdown dropdown">
+      <a href="#" title="" class="dropdown-toggle noColor">
+        <img src="img/en-US.svg" class="flag-icon">
+      </a>
+    </div>
+    <span class="mex hidden-xs">
+      
+    </span>
+    <a href="#" class="fa fa-question-circle _2HHdzcBx hidden-xs"></a>
+    <span class="mex">
+      
+    </span>
+    <div class="optionsDropdown mainOptionsDropdown dropdown">
+      <a href="#" title="" class=" dropdown-toggle noColor">
+        <span>
+        <span data-test-id="logged-in-username">Guest</span>
+        
+      </span>
+      
+    </a>
+  </div>
+</div>
+</header>
+
+<div class="full-content col-12">
+  <div class="row">
+    <div class="col-md-2" style="background: #3B5264;padding: 0;">
+      <div class="sidebar">
+        <ul class="linksBar">
+          <li class="separator">Wallet</li>
+          <li class="item active ">
+            <a href="/app/wallet">
+              <i class="item-icon fas fa-fw fa-university"></i>
+              <span class="name">Balances</span>
+            </a>
+          </li>
+          <li class="item">
+            <a href="/app/deposit">
+              <i class="item-icon fab fa-fw fa-btc"></i>
+              <span class="name">Deposit</span>
+            </a>
+          </li>
+          <li class="item">
+            <a href="/app/withdraw">
+              <i class="item-icon fa fa-fw fa-upload"></i>
+              <span class="name">Withdraw</span>
+            </a>
+          </li>
+          <li class="separator">Account &amp; Preferences</li>
+          <li class="item">
+            <a href="/app/account">
+              <i class="item-icon fa fa-fw fa-user"></i>
+              <span class="name">My Account</span>
+            </a>
+          </li>
+          <li class="item">
+            <a href="/app/affiliates">
+              <i class="item-icon fab fa-fw fa-btc"></i>
+              <span class="name">Affiliate Status</span>
+            </a>
+          </li>
+          <li class="separator">History</li>
+          <li class="item">
+            <a href="/app/tradeHistory">
+              <i class="item-icon fas fa-fw fa-exchange-alt"></i>
+              <span class="name">Trade History</span>
+            </a>
+          </li>
+          <li class="item">
+            <a href="/app/orderHistory">
+              <i class="item-icon fa fa-fw fa-list-ul"></i>
+              <span class="name">Order History</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-10">
+      <div class="withdraw-content col-12">
+       <div class="row" style="border-bottom: 1px solid #000;">
+         <div class="col-10 text-center">
+           <h3>Trade History:<span>shyonsiddique@gmail.com</span></h3>
+         </div>
+         <div class="col-2" style="text-align: right;margin-top: 5px;">
+              <button class="btn btn-info btn-sm">Save as CSV</button>
+         </div>
+       </div>
+         <div class="row">
+           <div class="col-12">
+             <p style="margin: 5px 0;">This list contains all of your trades and fee payments.</p>
+             <p>Filter by clicking a property value. You can manually modify queries in the text box below.</p>
+           </div>
+         </div>
+         <div class="row">
+           <div class="col-12">
+             <input type="text" name="search" placeholder="Click value below to filter" style="width: 45%;">
+             <div class="btn-group" style="margin-top: -5px;">
+               <button class="btn btn-danger btn-sm btn-no-radius">Clear</button>
+               <button class="btn btn-info btn-sm btn-no-radius">Search</button>
+             </div>
+           </div>
+         </div>
+         <div class="row">
+           <div class="col-12 text-center">
+             <p>Showing Results 0 - 0</p>
+           </div>
+         </div>
+         <div class="row">
+           <div class="col-12">
+             <table class="table table-outline table-bordered">
+                <thead>
+                  <tr>
+                    <th>Time</th>
+                    <th>Symbol</th>
+                    <th>Exec Type</th>
+                    <th>Side</th>
+                    <th>Exec Qty</th>
+                    <th>Exec Price</th>
+                    <th>Value</th>
+                    <th>Fee Rate</th>
+                    <th>Fee Paid</th>
+                    <th>Order Type</th>
+                    <th>Order Qty</th>
+                    <th>Qty Left</th>
+                    <th>Order Price</th>
+                    <th>Text</th>
+                    <th>OrderID</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>No Data</td>
+                    <td></td>
+                    <td></td>
+                    <td></td> 
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+           </div>
+         </div>
+         
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!--  footer -->
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <img class="footer-logo" src="img/bitmex-logo-alt-white.png" alt="">
+        <p>BitMEX is a P2P crypto-products trading platform.
+
+  BitMEX and the mobile apps issued under BMEX are wholly owned and operated by HDR Global Trading Limited, a Republic of Seychelles incorporated entity or its relevant authorized affiliates.</p>
+
+         <p>Cryptocurrency charts by TradingView.</p>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <div class="col-6">
+            <h4>About</h4>
+            <ul>
+              <li><a href="#">About the Team</a></li>
+              <li><a href="#">Affiliate Program</a></li>
+              <li><a href="#">Carees at BitMEX</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Security</a></li>
+              <li><a href="#">Terms of Service</a></li>
+            </ul>
+          </div>
+          <div class="col-6">
+            <h4>Data</h4>
+            <ul>
+              <li><a href="#">Fees</a></li>
+              <li><a href="#">Bitcoin/USD</a></li>
+              <li><a href="#">Ethereum</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <div class="col-6">
+            <h4>Reference</h4>
+            <ul>
+              <li><a href="#">API</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Futures Guide</a></li>
+              <li><a href="#">Perpetuals Guide</a></li>
+              <li><a href="#">Trading on BitMEX</a></li>
+            </ul>
+          </div>
+          <div class="col-6">
+            <h4>Contact Us</h4>
+            <ul>
+              <li><a href="#">Support</a></li>
+              <li><a href="#">Email Contact</a></li>
+              <li><a href="#">PGP Communication</a></li>
+            </ul>
+
+            <!-- Social buttons -->
+            <h5 class="font-weight-bold text-uppercase mb-4">Follow Us</h5>
+            <ul class="inline-li">
+              
+
+              <!-- Facebook -->
+              <li>
+                <a href="#">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+              </li>
+              <!-- Twitter -->
+              <li>
+                <a href="https://twitter.com/BitMEXdotcom">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </li>
+              <!-- Google +-->
+              <li>
+                <a href="#">
+                  <i class="fab fa-google-plus"></i>
+                </a>
+              </li>
+              <!-- Dribbble -->
+              <li>
+                <a href="https://blog.bitmex.com">
+                  <i class="fab fa-dribbble"></i>
+                </a>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+   
+    
+
+
+  </body>
+</html>
